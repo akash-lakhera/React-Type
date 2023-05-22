@@ -7,6 +7,7 @@ import {
 import './App.css'
 import Form from "./Form";
 import Auth from "./Auth";
+import Grid from "./Grid";
 function App() {
 
 
@@ -17,7 +18,7 @@ function App() {
 <Routes>
 <Route path="/" element={<Form/>}/>
 <Route path="/dash" element={<Auth>
-here goes
+<Grid/>
 </Auth>}/>
 
 

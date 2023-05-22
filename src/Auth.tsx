@@ -1,20 +1,22 @@
-import {useNavigate} from "react-router-dom"
-function Auth(props:any) {
-  const nav=useNavigate()
-  let user=localStorage.getItem("name");
-  console.log(user)
-  console.log(props.children)
-  let display:any=""
-  if(user){
-     display= props.children
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+function Auth(props: any) {
+  const nav = useNavigate();
+  let user = localStorage.getItem("name");
+  console.log(user);
+  console.log(user != "");
+  let display: any = props.children;
+ 
+  useEffect(() => {
+    if (user != "") {
+      display = props.children;
+    } else {
+      nav("/", { replace: true });
+    }
 
-  }
-else nav("/")
-  return (
-    <>
-    {display}
-    
-    </>
-  )
+    return () => {};
+  }, []);
+
+  return <>{display}</>;
 }
-export default Auth
+export default Auth;
