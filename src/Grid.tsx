@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react"
 import { DataGrid } from "@mui/x-data-grid"
+import {  Box } from "@mui/material";
 import UserData from "./User"
 function Grid() {
     const [data,setData]=useState<UserData[]>([])
@@ -9,7 +10,7 @@ function Grid() {
         { field: 'title', headerName: 'Title', width: 600 },
       
       ]
-    console.log(data)
+    
     useEffect(() => {
        
             fetch("https://jsonplaceholder.typicode.com/posts")
@@ -23,14 +24,23 @@ function Grid() {
     }, [])
     
   return (
-    <div><div style={{ width: '100%',height:600 }}>
+    <div>
+    <Box sx={{height:"50vh"}}>
     <DataGrid
       rows={data}
       columns={columnName}
-      autoHeight={true}
-      rowHeight={100}
-    />
-  </div></div>
+      
+      initialState={{
+          pagination: {
+              paginationModel: { pageSize: 10, },
+            },
+        }}
+        
+        
+        />
+
+        </Box>
+  </div>
   )
 }
 export default Grid
