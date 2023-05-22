@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 import { DataGrid } from "@mui/x-data-grid"
 import {  Box } from "@mui/material";
-import UserData from "./User"
+import UserData from "../User"
 function Grid() {
     const [data,setData]=useState<UserData[]>([])
     const columnName = [
@@ -27,6 +27,7 @@ function Grid() {
     <div>
     <Box sx={{height:"50vh"}}>
     <DataGrid
+    sx={{color:"rgb(3, 3, 70)"}}
       rows={data}
       columns={columnName}
       

@@ -5,9 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css'
-import Form from "./Form";
-import Auth from "./Auth";
-import Grid from "./Grid";
+import Form from "./components/Form";
+import Auth from "./components/Auth";
+import Grid from "./components/Grid";
+import Check from "./components/Check";
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
 <Route path="/" element={<Form/>}/>
 <Route path="/dash" element={<Auth>
 <Grid/>
+<Check/>
 </Auth>}/>
 
 

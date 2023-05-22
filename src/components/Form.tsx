@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { TextField, Box, Button, Grid, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import User from "./Inter";
+import User from "../Inter";
 function Form() {
   const nav = useNavigate();
   const [err, setErr] = useState({ name: true, phone: true, email: true });
